@@ -11,13 +11,14 @@
 </head>
 <body>
   <!-- 注册 -->
-  <div class="register" id="registerBox">
+  <div class="register" id="registerBox" style="display: none">
+    <h3>用户注册</h3>
     <dl>
       <dt>
         <label>Username</label>
       </dt>
       <dd>
-        <input type="text" name="username" >
+        <input type="text" name="username">
       </dd>
     </dl>
     <dl>
@@ -40,8 +41,42 @@
     <div class="tips">
 
     </div>
+    <div class="exchange">
+      <a href="javascript:;">登录</a>
+    </div>
   </div>
   <!-- //注册 -->
-
+  <!-- 登录 -->
+  <div class="register" id="loginBox" style="display: ">
+    <h3>用户登录</h3>
+    <dl>
+      <dt>
+        <label>Username</label>
+      </dt>
+      <dd>
+        <input type="text" name="username" >
+      </dd>
+    </dl>
+    <dl>
+      <dt>
+        <label>Password</label>
+      </dt>
+      <dd>
+        <input type="password" name="password" >
+      </dd>
+    </dl>
+    <button class="btn">Sign in</button>
+    <div class="tips">
+    </div>
+    <div class="exchange">
+      <a href="javascript:;">注册</a>
+    </div>
+  </div>
+  <!-- //登录 -->
+  <!-- 登录后 -->
+  <div class="register" id="successBox" style="display: none ">
+    <h3>欢迎，<span>user</span></h3>
+  </div>
+  <!-- //登录后 -->
 </body>
 </html>

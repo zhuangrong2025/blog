@@ -11,7 +11,8 @@ router.use( function(req, res, next){
 	};
 	next();
 });
-/* post  register */
+
+/* register */
 router.post("/user/register", function(req, res, next) {
 	var username = req.body.username;
 	var password = req.body.password;
@@ -54,14 +55,36 @@ router.post("/user/register", function(req, res, next) {
 			username: username,
 			password: password
 		});
-		return user.save(); //也是返回promise
+		return user.save(); //也是返回promise,可以接着用then
 	}).then(function( newUserInfo ){
 		console.log(newUserInfo);
+		//注册成功
+  	responseData.message = "sign up success";
+  	res.json(responseData);
+
 	});
 
-	//注册成功
-	responseData.message = "sign up success";
-	res.json(responseData);
+
+});
+
+/* login */
+router.post("/user/login", function(req, res, next) {
+	var username = req.body.username;
+	var password = req.body.password;
+	//判断数据库中是否有此用户
+	User.findOne({
+		username: username,
+		password: password
+	}).then(function(userinfo){
+		if(!userinfo){
+			responseData.code = 1;
+			responseData.message = "user does not exist";
+			res.json(responseData);
+			return;
+		}
+		responseData.message = "sign in success";
+		res.json(responseData);
+	});
 
 });
 

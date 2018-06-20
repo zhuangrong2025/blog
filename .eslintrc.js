@@ -16,9 +16,8 @@ module.exports = {
             "error",
             "double"
         ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "no-console": 0,
+        "semi": 0,
+        "no-mixed-spaces-and-tabs": [2, true]
     }
 };
