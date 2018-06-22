@@ -140,3 +140,38 @@ em,h3{
   color: #f00;
   font-weight: bold;
 }
+
+/* 用户列表 */
+.users-wrap{
+  padding: 50px;
+}
+.users {
+  height: 500px;
+  padding: 20px;
+  background-color: #FAFBFC;
+  border-radius: 5px;
+  border: 1px solid  #ddd;
+}
+.users dl{
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.users dd,
+.users dt{
+  -webkit-flex: 1px;
+  -ms-flex: 1px;
+  flex: 1px;
+}
+.users .u-list,
+.users .u-header{
+  border-bottom: 1px solid  #ddd;
+  height: 38px;
+  line-height: 38px;
+}
+.manage{
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

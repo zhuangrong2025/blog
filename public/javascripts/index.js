@@ -1,7 +1,7 @@
 $(function(){
-	var $registerBox = $("#registerBox");
-	var $loginBox = $("#loginBox");
-	var $successBox = $("#successBox");
+	var $registerBox = $("#registerBox")
+	var $loginBox = $("#loginBox")
+	var $successBox = $("#successBox")
 	//点击注册按钮
 	$registerBox.find("button").on("click",function(){
 		$.ajax({
@@ -14,47 +14,47 @@ $(function(){
 			},
 			dataType: "json",
 			success: function(result){
-				$registerBox.find(".tips").text(result.message);
-				console.log(result.code);
-				if( result.code == 0){
+				$registerBox.find(".tips").text(result.message)
+				console.log(result.code)
+				if( !result.code){
 					setTimeout(function(){
-						$registerBox.hide();
-						$loginBox.show();
-					}, 1000);
+					  $registerBox.hide()
+						$loginBox.show()
+					}, 1000)
 				}
 
 			}
-		});
-	});
+		})
+	})
 	//点击登录按钮
 	$loginBox.find("button").on("click",function(){
 		$.ajax({
 			type: "post",
 			url: "api/user/login",
 			data:{
-				username : $loginBox.find("[name = 'username']").val(),
-				password : $loginBox.find("[name = 'password']").val()
+				username : $loginBox.find('[name = "username"]').val(),
+				password : $loginBox.find('[name = "password"]').val()
 			},
 			dataType: "json",
 			success: function(result){
-				$loginBox.find(".tips").text(result.message);
-				if( result.code == 0){
+				$loginBox.find(".tips").text(result.message)
+				if( !result.code ){
 					setTimeout(function(){
 					  $loginBox.hide()
 						$successBox.show()
-						$successBox.find("h3 span").text(result.message)
+						$successBox.find("h3 span").text(result.userinfo.username)
 					}, 1000)
 				}
 			}
-		});
-	});
+		})
+	})
 	//切换面板
 	$loginBox.find(".exchange a").on("click",function(){
 		$registerBox.show()
 		$loginBox.hide()
-	});
+	})
 	$registerBox.find(".exchange a").on("click",function(){
 		$registerBox.hide()
 		$loginBox.show()
-	});
-});
+	})
+})

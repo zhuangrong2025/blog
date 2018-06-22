@@ -1,6 +1,7 @@
 module.exports = {
     "env": {
-        "browser": true
+        "browser": true,
+        "node": true
     },
     "extends": "eslint:recommended",
     "rules": {
@@ -14,10 +15,13 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "double"
+            "double",
+            { "avoidEscape": true }
         ],
+        "no-undef": "error",
         "no-console": 0,
-        "semi": 0,
-        "no-mixed-spaces-and-tabs": [2, true]
+        "semi": ["error", "never"],
+        "no-extra-semi": 2,
+        "no-mixed-spaces-and-tabs": ["error", "smart-tabs"]
     }
 };
