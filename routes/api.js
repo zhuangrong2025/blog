@@ -11,7 +11,6 @@ router.use( function(req, res, next){
 	}
 	next()
 })
-
 /* register */
 router.post("/user/register", function(req, res, next) {
 	var username = req.body.username

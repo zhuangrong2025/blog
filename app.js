@@ -6,14 +6,21 @@ var Cookies = require("cookies")
 var cookieParser = require("cookie-parser")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
-
+var swig = require("swig")
 
 
 var app = express()
 
 // view engine setup
-app.engine(".html",require("ejs").__express)
+//设置swig页面不缓存
+swig.setDefaults({
+	cache: false
+})
+app.set("view cache", false)
+app.set("views","./views")
 app.set("view engine","html")
+app.engine("html", swig.renderFile)
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/main.css">
+  <script src="/javascripts/jquery-3.2.1.min.js" charset="utf-8"></script>
+  <script src="/javascripts/index.js" charset="utf-8"></script>
+  <title>Document</title>
+</head>
+<body>
+<!-- 导航 -->
+<div class="admin-nav">
+  <div class="nav-left">
+    <ul>
+      <li><a href="#">后台首页</a></li>
+      <li><a href="#">用户管理</a></li>
+    </ul>
+  </div>
+</div>
+<!-- //导航 -->
+<!-- 内容区域 -->
+<div class="admin-container">
+{% block main %}一些内容，这里可不填{% endblock %}
+</div>
+<!-- //内容区域 -->
+</body>
+</html>
