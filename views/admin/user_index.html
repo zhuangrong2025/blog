@@ -1,0 +1,53 @@
+
+
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="users-wrap">
+  <h3>用户列表</h3>
+  <div class="users" id="userList">
+    <dl class="u-header">
+      <dd>id</dd>
+      <dd>用户名</dd>
+      <dd>密码</dd>
+      <dt>操作</dt>
+    </dl>
+    {% for user in users %}
+    <dl class="u-list">
+      <dd>{{ user._id.toString() }} </dd>
+      <dd>{{ user.username }} </dd>
+      <dd>{{ user.password }}</dd>
+      <dt>
+        <a href="javascript:;" id="{{ user._id.toString()}}">删除</a>
+        <a href="/admin/user_index/modify?id={{ user._id.toString()}}&name={{ user.username}}">修改</a>
+      </dt>
+    </dl>
+    {% endfor %}
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){
+  //删除用户
+  $("#userList .u-list").each(function(){
+    $(this).find("dt a:eq(0)").on("click", function(){
+      var delObj = $(this)
+      $.ajax({
+         type: 'post',
+         url: '/admin/user_index/del',
+         data:{
+                id : delObj.attr("id")
+              },
+         dataType: 'json',
+         success: function(data){
+           delObj.parents(".u-list").remove()
+         }
+      })
+    })
+  })
+})
+
+</script>
+
+
+{% endblock %}

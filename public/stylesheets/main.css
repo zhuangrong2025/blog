@@ -10,7 +10,7 @@ body{
   font-size: 14px;
   line-height: 1.5;
   color: #24292e;
-  background-color: #2B3137;
+  background-color: #fff;
 }
 body, div, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, a, nav{
   margin: 0;
@@ -143,14 +143,16 @@ em,h3{
 
 /* 用户列表 */
 .users-wrap{
-  padding: 50px;
+}
+.users-wrap h3{
+  padding: 10px 0;
+  font-weight: bold;
 }
 .users {
   height: 500px;
-  padding: 20px;
-  background-color: #FAFBFC;
+  padding: 0 0px;
+  background-color: #fff;
   border-radius: 5px;
-  border: 1px solid  #ddd;
 }
 .users dl{
   display: -webkit-flex;
@@ -162,6 +164,10 @@ em,h3{
   -webkit-flex: 1px;
   -ms-flex: 1px;
   flex: 1px;
+  padding-right: 20px;
+}
+.users .u-header{
+  border-top: 1px solid  #ddd;
 }
 .users .u-list,
 .users .u-header{
@@ -234,11 +240,13 @@ em,h3{
   min-width: 100px;
 }
 .admin-bg{
-  background-color: #fff;
+  background-color: #2B3137;
 }
 .admin-nav{
+  height: 68px;
   background-color: #eee;
   padding: 0 10px;
+  clear: both;
 }
 .pull-left{
   float: left;
@@ -246,9 +254,19 @@ em,h3{
 .pull-right{
   float: right;
 }
-.nav li{
+.nav-left{
+  background-color: #eee;
+  clear: both;
+}
+.nav-left li{
+  float: left;
+  height: 68px;
+  line-height: 68px;
   display: inline-block;
   padding: 0 10px;
-  height: 80px;
-  line-height: 80px;
+}
+.admin-container{
+  padding: 10px;
+  clear: both;
+  width: 100%;
 }
